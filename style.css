@@ -61,3 +61,14 @@ footer {
     background-color: #2c2c2c;
     color: #d4d4d4;
 }
+
+/* for when more than one photo is taking up space */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-grid img {
+    width: 50%;
+    height: auto;
+}
