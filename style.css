@@ -64,11 +64,13 @@ footer {
 
 /* for when more than one photo is taking up space */
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 820px;
 }
 
 .image-grid img {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
