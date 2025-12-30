@@ -1,8 +1,8 @@
-<!-- <body style = "background-color:powderblue;">
+<!-- <body style="background-color:powderblue;">
     <p>
         Kart!
     </p>
-    <img src = "wooden_kart.png" alt = "kart" width = "527" height = "560">
+    <img src="wooden_kart.png" alt="kart" width="527" height="560">
 </body> -->
 
 <!DOCTYPE html>
@@ -15,30 +15,42 @@
 </head>
 <body>
     <header>
-        <h1>My wooden Go-kart!</h1>
+        <a class="back-button" href="/">< Back</a>
+        <h1>🏎️ DIY Wooden Go-Kart 🏎️</h1>
     </header>
     <main>
-        <img src = "wooden_kart.png" alt = "kart" width = "527" height = "560">
+        <div class="image-row">
+            <img src="test_drive.gif">
+        </div>
 
         <article>
-            <h2>Project Description</h2>
+            <h2>Demo Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lxtoPKG34gQ?si=LHfMCFCGAueQ0XC- origin=https://www.youtube.com/watch?v=lxtoPKG34gQ" title="Ricky's Wooden Go Kart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <h2>How Fast is the Wooden Go Kart?</h2>
+            <img src="wooden_kart.png" alt="kart" width="527" height="560">
             <!-- Goal and result. -->
             <p>
                 The main goal for this project was to build a Go-kart over in the summer.
                 As a result, the design of the Go-kart is made to be as simple as possible,
-                with the only complication involved in the powertrain and steering system.
+                going at <b>17.8 km/h</b> (my weight included), with the only complication involved in the powertrain and steering system.
             </p>
-            <h2>Project Details</h2>
+
+            
+            <div class="image-row">
+                <img src="max_speed.png">
+            </div>
+            <h2>Creating the Steering System</h2>
             <!-- Information about the project and its details. -->
             <p>
                 This Go-kart is design with a Ackermann steering system, providing different turning angles for the front wheels.
                 What this does is that it gives the driver greater handling compared a non-Ackermann steering system.
             </p>
 
-            <div class = "image-grid">
-                <img src = "rear_axle_draft.jpeg" alt = "axle" width = "403" height = "302">
-                <img src = "steering_system.jpeg" alt = "steering" width = "403" height = "302">
-                <img src = "steering_block.jpeg" alt = "block" width = "403" height = "302">
+            <div class="image-grid">
+                <img src="rear_axle_draft.jpeg" width="403" height="302">
+                <img src="steering_system.jpeg" alt="steering" width="403" height="302">
+                <img src="steering_block.jpeg" alt="block" width="403" height="302">
             </div>
 
             <p>
@@ -58,28 +70,34 @@
                 steering issue with the root cause of vibrations from the tire.
             </p>
 
-            <div class = "image-grid">
-                <img src = "ackermann_joint.jpg" alt = "axle" width = "302" height = "403">
-                <img src = "ackermann_kart.jpeg" alt = "axle" width = "750" height = "983">
-                <img src = "ackermann_turning_examples.jpeg" alt = "axle" width = "377" height = "133">
+            <div class="double-image-row">
+                <img src="ackermann_joint.jpg">
+                <img src="ackermann_kart.jpeg">
             </div>
 
-            <h2>Challenges and Solutions</h2>
+            <div class="image-row">
+                <img src="ackermann_turning_examples.jpeg">
+            </div>
+
+            <h2>Handling the Lateral Forces</h2>
             <!-- The issues in the project, and they were solved. -->
             <p>
                 One of the issues that came up during this project was the reliability of the steering system.
                 For instance, as you turn the Go-kart, the front wheels will begin to bend and break due to the lateral forces applied onto them.
                 To solve this, the front of the Go-kart needed more stability to support the wheels.
-
-                Thus, a long metal piece was added in order to keep the wheels in place.
-                The solution resulted in a much more reliable Go-kart, providing more time to drive the Go-kart.
             </p>
 
-            <div class = "image-grid">
-                <img src = "lateral_issue.jpg" alt = "axle" width = "302" height = "403">
-                <img src = "second_bar.JPG" alt = "axle" width = "192" height = "108">
+            <div class="image-grid">
+                <img src="lateral_issue.jpg" width="302" height="403">
             </div>
+            <p>The hub of the wheel was damage by the lateral force.</p>
 
+            <div class="image-row">
+                <img src="second_bar.JPG" height="400px">
+            </div>
+            <p>A long metal piece was added in order to keep the wheels in place.</p>
+
+            <h2>Working with a ESC with No Manual</h2>
             <p>
                 Another issue that was faced during the project was a unknown problem with the eletric powertrain.
                 The silver box (speed controller) is used for handling tasks such as reading the throttle pedal
@@ -92,7 +110,16 @@
                 and when a issue comes up, as it most likely holds the answer.
             </p>
 
-            <img src = "electronic_powertrain.jpg" alt = "axle" width = "403" height = "302">
+            <div class="image-row">
+                <img src="electronic_powertrain.jpg" width="403" height="302">
+            </div>
+            <div class="image-row">
+                <img src="circuit_diagram.png" width="403" height="302">
+            </div>
+            
+            <p>
+                Here is the circuit diagram for the kart. Two 12v SLA batteries are connected in series to create 24v.
+            </p>
         </article>
     </main>
     <footer>

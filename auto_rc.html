@@ -10,17 +10,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My self driving RC car!</title>
+    <title>Self Driving RC Car</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>My self driving RC car!</h1>
+        <a class="back-button" href="/">< Back</a>
+        <h1>Self Driving RC Car</h1>
     </header>
     <main>
         <img src = "car.jpeg" alt = "car" width = "504" height = "381">
 
         <article>
+            <h2>Demo Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fkUdbjmpuAc?si=IXUOzmeWg0kuAtAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
             <h2>Project Description</h2>
             <!-- This is where you can write about your project. -->
             <p>
@@ -29,21 +33,56 @@
                Once the A.I. model has all the data, it can train itself and learn how to drive on the track.
             </p>
             <a href="https://github.com/IamRGO/auto-rc">Check out the project's Github!</a>
-            <h2>Project Details</h2>
-            <!-- Add more information about your project here. -->
+            <h2>Capturing the User Input</h2>
             <p>
-               I have taken an RC car, a camera, and a Raspberry Pi which had the AI model.
-               I have also added an Arduino and a speed controller to control the speed of the RC car.
+                In order to train the TensorFlow model, Arduino and Raspberry Pi were used to record the user input data while I was driving the RC around the test track.
+                This data was used to train the Tensofrlow Model later on.
             </p>
-            <h2>Challenges and Solutions</h2>
-            <!-- Discuss any challenges you faced and how you overcame them. -->
+            <div class="double-image-row">
+                <img src="rc_remote.png">
+                <img src="rc_v0.png">
+            </div>
+            <p>RC Remote was modified to use Arduino to capture the user input, and Raspberry Pi on the RC to store the data.</p>
+            
+
+            <h2>Creating Training Data Set</h2>
+            <div class="image-row">
+                <img src="rc_training.gif">
+            </div>
+
+            <div class="image-row">
+                <img src="rc_diagram.png">
+            </div>
             <p>
-               In this project, I have face certain issues while building the AI RC car.
+                While I was driving the RC car, the Raspberry Pi's webcam took a photo and saved the user's throttle and steering values.
             </p>
+
+            <div class="image-row">
+                <img src="rc_debug.png">
+            </div>
+            <p>The recordings were stored in a folder like these.</p>
+            <div class="image-row">
+                <img src="rc_images.png">
+            </div>
+
+            <h2>How the Tensorflow Sees the World</h2>
             <p>
-               One of these issues was the data that the AI was trained with. Because the AI was observing everything in the photo, it was not focusing on the track layout.
-               To solve this, I made a python script that will go through all the recorded photos and edit out everything except the track.
+                Since, the AI only needs to follow the track, it just needs to see the yellow rope on the floor. Everything else can be ignored.
+                Here is how the TensorFlow sees the world:
             </p>
+            <div class="image-row">
+                <img src="rc_vision.gif"">
+            </div>
+
+            <h2>Creating a TensorFlow Model</h2>
+            <p>Tensorflow Model needed to be compact enough to run from the Raspberry Pi. Therefore, the image from web camera had to use a low resolution of 160x120 to produce 30 actions per second.</p>
+            <p>Since the throttle value stayed constant around the track, the model only needed to generate a steering value. Because it produced just one output, the Raspberry Pi could run the model much faster.</p>
+            <div class="image-row">
+                <img src="tensorflow_model.png">
+            </div>
+
+            <h2>Training the TensorFlow Model</h2>
+            <p>90% of the data was reserved to train t</p>
         </article>
     </main>
     <footer>
