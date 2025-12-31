@@ -20,7 +20,7 @@
     </header>
     <main>
         <!-- <img src = "car.jpeg" alt = "car" width = "504" height = "381"> -->
-        <img src="rc_test.gif">
+        <img src="photos_and_gifs/rc_test.gif">
 
         <article>
             <h2>Demo Video</h2>
@@ -39,30 +39,30 @@
                 This data was used to train the Tensofrlow Model later on.
             </p>
             <div class="double-image-row">
-                <img src="rc_remote.png">
-                <img src="car.jpeg">
+                <img src="photos_and_gifs/rc_remote.png">
+                <img src="photos_and_gifs/car.jpeg">
             </div>
             <p>RC Remote was modified to use Arduino to capture the user input, and Raspberry Pi on the RC to store the data.</p>
             
 
             <h2>Creating Training Data Set</h2>
             <div class="image-row">
-                <img src="rc_training.gif">
+                <img src="photos_and_gifs/rc_training.gif">
             </div>
 
             <div class="image-row">
-                <img src="rc_diagram.png">
+                <img src="photos_and_gifs/rc_diagram.png">
             </div>
             <p>
                 While I was driving the RC car, the Raspberry Pi's webcam took a photo and saved the user's throttle and steering values.
             </p>
 
             <div class="image-row">
-                <img src="rc_debug.png">
+                <img src="photos_and_gifs/rc_debug.png">
             </div>
            
             <div class="image-row">
-                <img src="rc_images.png">
+                <img src="photos_and_gifs/rc_images.png">
             </div>
             <p>A Pygame tool was made to manually debug any mistakes made by the model after its training. The recordings were stored in a folder like these.</p>
 
@@ -72,25 +72,25 @@
                 Here is how the TensorFlow sees the world:
             </p>
             <div class="image-row">
-                <img src="rc_vision.gif"">
+                <img src="photos_and_gifs/rc_vision.gif"">
             </div>
 
             <h2>Creating a TensorFlow Model</h2>
             <p>Tensorflow Model needed to be compact enough to run from the Raspberry Pi. Therefore, the image from web camera had to use a low resolution of 160x120 to produce 30 actions per second.</p>
             <p>Since the throttle value stayed constant around the track, the model only needed to generate a steering value. Because it produced just one output, the Raspberry Pi could run the model much faster.</p>
             <div class="image-row">
-                <img src="image_to_matrix.png">
-                <img src="tensorflow_model.png">
+                <img src="photos_and_gifs/image_to_matrix.png">
+                <img src="photos_and_gifs/tensorflow_model.png">
             </div>
 
             <h2>Training the TensorFlow Model</h2>
             <p>90% of the data was reserved to train the AI model, and the last 10% is to test and measure the accuracy after its training.</p>
             <div class="image-row">
-                <img src="train_vs_test.png">
+                <img src="photos_and_gifs/train_vs_test.png">
             </div>
             <p>This graph uses data from one of the training sessions, showing how more training (increasing the epoch) decreases the training loss. This proves that the model is learning from their own mistakes.</p>
             <div class="image-row">
-                <img src="epoch_data.png">
+                <img src="photos_and_gifs/epoch_data.png">
             </div>
             <p>Here is the traing history, showing the val_loss (how much did the model get wrong) is decreasing using the 10% data set to measure the accuracy value.</p>
         </article>
