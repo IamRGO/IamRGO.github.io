@@ -42,7 +42,7 @@
                 <img src="rc_remote.png">
                 <img src="rc_v0.png">
             </div>
-            <p>RC Remote was modified to use Arduino to capture the user input, and Raspberry Pi on the RC to store the data.</p>
+            <p>RC Remote was modified to use Arduino to capture the user input, and Raspberry Pi on the RC to store the data. (The RC car above is the first verision!)</p>
             
 
             <h2>Creating Training Data Set</h2>
@@ -60,10 +60,11 @@
             <div class="image-row">
                 <img src="rc_debug.png">
             </div>
-            <p>The recordings were stored in a folder like these.</p>
+           
             <div class="image-row">
                 <img src="rc_images.png">
             </div>
+            <p>A Pygame tool was made to manually debug any mistakes made by the model after its training. The recordings were stored in a folder like these.</p>
 
             <h2>How the Tensorflow Sees the World</h2>
             <p>
@@ -78,11 +79,20 @@
             <p>Tensorflow Model needed to be compact enough to run from the Raspberry Pi. Therefore, the image from web camera had to use a low resolution of 160x120 to produce 30 actions per second.</p>
             <p>Since the throttle value stayed constant around the track, the model only needed to generate a steering value. Because it produced just one output, the Raspberry Pi could run the model much faster.</p>
             <div class="image-row">
+                <img src="image_to_matrix.png">
                 <img src="tensorflow_model.png">
             </div>
 
             <h2>Training the TensorFlow Model</h2>
-            <p>90% of the data was reserved to train t</p>
+            <p>90% of the data was reserved to train the AI model, and the last 10% is to test and measure the accuracy after its training.</p>
+            <div class="image-row">
+                <img src="train_vs_test.png">
+            </div>
+            <p>This graph uses data from one of the training sessions, showing how more training (increasing the epoch) decreases the training loss. This proves that the model is learning from their own mistakes.</p>
+            <div class="image-row">
+                <img src="epoch_data.png">
+            </div>
+            <p>Here is the traing history, showing the val_loss (how much did the model get wrong) is decreasing using the 10% data set to measure the accuracy value.</p>
         </article>
     </main>
     <footer>
